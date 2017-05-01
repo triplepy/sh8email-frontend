@@ -1,0 +1,29 @@
+<template>
+  <div id="app">
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'app'
+}
+</script>
+
+<style>
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+html, body {
+  font-family: 'Nanum Gothic', sans-serif;
+  word-break: keep-all; /* 한글 띄어쓰기를 경계로 줄바꿈. */
+}
+
+.navbar-brand > img {
+  display: inline;
+  margin-right: 0.3em;
+}
+
+.btn.btn-default.js-forms-submitbutton {
+  margin-left: 10px;
+}
+</style>
