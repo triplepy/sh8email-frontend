@@ -53,6 +53,27 @@ export default {
 
 <!-- Source from https://getbootstrap.com/examples/cover/cover.css -->
 <style scoped>
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .intro {
   display: table;
@@ -76,6 +97,16 @@ export default {
   padding: 30px;
 }
 
+/*
+ * Base structure
+ */
+.intro {
+   height: 100%;
+   background-color: #333;
+   color: #fff;
+   text-align: center;
+   text-shadow: 0 1px 3px rgba(0,0,0,.5);
+ }
 
 /*
  * Header
@@ -183,40 +214,8 @@ export default {
 
 <!-- Source from https://getbootstrap.com/examples/cover/cover.css -->
 <style>
-/*
- * Globals
- */
-
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
-}
-
-/*
- * Base structure
- */
-
-html,
-body {
+html, body {
   height: 100%;
-  background-color: #333;
-}
-body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 </style>
 
