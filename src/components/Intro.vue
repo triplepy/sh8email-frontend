@@ -1,42 +1,42 @@
 <template>
   <div class="intro">
-        <form id="login" action="{% url 'checkin' %}" method="post" class="js-forms-submitform">
-          <div class="cover-container">
-            <div class="inner cover">
-              <h1 class="cover-heading intro-cover-title">sh8.email <sup><i>βeta</i></sup></h1>
-              <p class="lead">
-                <label class="intro-cover-subtitle" for="">세상에서 가장 조용한 이메일</label>
-              <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
-                  <div class="input-group">
-                    <div class="input-group input-group-lg">
-                      <input type="text" name="recipient" id="recipient" class="form-control" placeholder="닉네임"
-                             required="required" autofocus>
-                      <span class="input-group-addon" id="basic-addon2">@sh8.email</span>
-                    </div>
-                  </div>
+    <form id="login" action="{% url 'checkin' %}" method="post" class="js-forms-submitform">
+      <div class="cover-container">
+        <div class="inner cover">
+          <h1 class="cover-heading intro-cover-title">sh8.email <sup><i>βeta</i></sup></h1>
+          <p class="lead">
+            <label class="intro-cover-subtitle" for="">세상에서 가장 조용한 이메일</label>
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+              <div class="input-group">
+                <div class="input-group input-group-lg">
+                  <input type="text" name="recipient" id="recipient" class="form-control" placeholder="닉네임"
+                         required="required" autofocus>
+                  <span class="input-group-addon" id="basic-addon2">@sh8.email</span>
                 </div>
               </div>
-              </p>
-              <p class="lead"><!-- 공백을 위함 --></p>
-              <p class="lead">
-                <div class="row">
-                  <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
-                    <button class="btn btn-lg btn-primary mailcheck js-forms-submitbutton">메일 확인</button>
-                  </div>
-                </div>
-              </p>
-              <p class="lead">
-                <div class="row">
-                  <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
-                    <a href="{% url 'web:help' %}" class="btn btn-lg btn-default mailcheck">이게 뭐고, 어떻게 쓰는거죠?</a>
-                  </div>
-                </div>
-              </p>
-              <a href="https://play.google.com/store/apps/details?id=org.triplepy.sh8email.sh8"><img class="playstore-img" src="../assets/playstore_badge.png" alt="Play Store에서 다운받기"></a>
             </div>
           </div>
-        </form>
+          </p>
+          <p class="lead"><!-- 공백을 위함 --></p>
+          <p class="lead">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+                <button class="btn btn-lg btn-primary mailcheck js-forms-submitbutton">메일 확인</button>
+              </div>
+            </div>
+          </p>
+          <p class="lead">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+                <a href="{% url 'web:help' %}" class="btn btn-lg btn-default mailcheck">이게 뭐고, 어떻게 쓰는거죠?</a>
+              </div>
+            </div>
+          </p>
+          <a href="https://play.google.com/store/apps/details?id=org.triplepy.sh8email.sh8"><img class="playstore-img" src="../assets/playstore_badge.png" alt="Play Store에서 다운받기"></a>
+        </div>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -51,7 +51,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- Source from https://getbootstrap.com/examples/cover/cover.css -->
 <style scoped>
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .intro {
@@ -179,41 +179,10 @@ export default {
     width: 700px;
   }
 }
-/**********************
-* [END] Source from https://getbootstrap.com/examples/cover/cover.css
-***********************/
-
-
-.input-group {
-  text-align: center;
-  width: 100%;
-}
-
-.form-control:focus {
-  background-color: transparent;
-}
-
-.btn.mailcheck{
-  width: 100%;
-}
-
-.intro-cover-subtitle {
-  color: #999999;
-}
-
-.intro-cover-title {
-  color: #FFFFFF;
-}
-
-.playstore-img {
-  margin-top: 3em;
-}
 </style>
 
+<!-- Source from https://getbootstrap.com/examples/cover/cover.css -->
 <style>
-/**********************
-* Source from https://getbootstrap.com/examples/cover/cover.css
-***********************/
 /*
  * Globals
  */
@@ -249,7 +218,37 @@ body {
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
+</style>
 
+
+<style scoped>
+.input-group {
+  text-align: center;
+  width: 100%;
+}
+
+.form-control:focus {
+  background-color: transparent;
+}
+
+.btn.mailcheck{
+  width: 100%;
+}
+
+.intro-cover-subtitle {
+  color: #999999;
+}
+
+.intro-cover-title {
+  color: #FFFFFF;
+}
+
+.playstore-img {
+  margin-top: 3em;
+}
+</style>
+
+<style>
 div#app {
   height: 100%
 }
