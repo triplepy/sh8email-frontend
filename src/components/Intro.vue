@@ -29,7 +29,7 @@
           <p class="lead">
             <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
-                <a href="{% url 'web:help' %}" class="btn btn-lg btn-default mailcheck">이게 뭐고, 어떻게 쓰는거죠?</a>
+                <router-link to="help" class="btn btn-lg btn-default mailcheck">이게 뭐고, 어떻게 쓰는거죠?</router-link>
               </div>
             </div>
           </p>
