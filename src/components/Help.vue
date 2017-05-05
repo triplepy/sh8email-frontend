@@ -1,5 +1,5 @@
 <template>
-  <div class="help">
+  <div class="help container">
     <div class="row help--item">
       <div class="col-md-8">
         <img src="../assets/no_signup_required.gif" alt="가입없이 바로 메일을 받아볼 수 있습니다." class="img-responsive">
