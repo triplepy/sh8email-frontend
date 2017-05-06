@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     showMails: function () {
-      this.$router.push({ name: 'Mails', query: { recipient: this.$data.recipient } })
+      this.$router.push({ name: 'Mails', params: { recipient: this.$data.recipient } })
     }
   }
 }

@@ -48,10 +48,12 @@ import moment from 'moment'
 import 'vue-awesome/icons/envelope'
 import Icon from 'vue-awesome/components/Icon'
 
+import formatAddress from '../utils/formatAddress'
+
 export default {
   data () {
     return {
-      recipient: this.$route.query.recipient,
+      recipient: this.$route.params.recipient,
       mails: [{
         _id: 1,
         subject: 'This is subject',

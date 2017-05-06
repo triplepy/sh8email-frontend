@@ -19,7 +19,7 @@ export default new Router({
       component: Help
     },
     {
-      path: '/mails',
+      path: '/recipient/:recipient/mails',
       name: 'Mails',
       component: Mails
     }
