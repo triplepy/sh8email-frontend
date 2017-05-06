@@ -28,9 +28,9 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12" v-if="mail.isSecret || mail.html">
+              <div class="col-lg-12" v-if="mail.isSecret">
               </div>
-              <div class="col-lg-12" v-else>
+              <div class="col-lg-12" v-else-if="mail.text">
                 {{ mail.text.substring(0, 200) }}
               </div>
             </div>
