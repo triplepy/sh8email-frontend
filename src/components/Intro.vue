@@ -1,6 +1,6 @@
 <template>
   <div class="intro">
-    <form id="login" action="{% url 'checkin' %}" method="post" class="js-forms-submitform">
+    <form id="login">
       <div class="cover-container">
         <div class="inner cover">
           <h1 class="cover-heading intro-cover-title">sh8.email <sup><i>βeta</i></sup></h1>
@@ -10,7 +10,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
               <div class="input-group">
                 <div class="input-group input-group-lg">
-                  <input type="text" name="recipient" id="recipient" class="form-control" placeholder="닉네임"
+                  <input v-model.trim="recipient" type="text" name="recipient" id="recipient" class="form-control" placeholder="닉네임"
                          required="required" autofocus>
                   <span class="input-group-addon" id="basic-addon2">@sh8.email</span>
                 </div>
@@ -22,7 +22,7 @@
           <p class="lead">
             <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
-                <button class="btn btn-lg btn-primary mailcheck js-forms-submitbutton">메일 확인</button>
+                <button class="btn btn-lg btn-primary mailcheck js-forms-submitbutton" v-on:click.prevent="showMails">메일 확인</button>
               </div>
             </div>
           </p>
@@ -45,7 +45,12 @@ export default {
   name: 'intro',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      recipient: ''
+    }
+  },
+  methods: {
+    showMails: function () {
+      this.$router.push({ name: 'Mails', query: { recipient: this.$data.recipient } })
     }
   }
 }
