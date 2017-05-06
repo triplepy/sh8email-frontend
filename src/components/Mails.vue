@@ -5,7 +5,7 @@
         닉네임을 입력하여 체크인을 해주세요.
       </div>
     </div>
-    <div class="row" v-else-if="!mails">
+    <div class="row" v-else-if="!mails || mails.length === 0">
       <div class="col-lg-12">
         <h3 class="text-center">({{ recipient }}@sh8.email)로 메일을 보내주세요</h3>
         <h1 class="text-center"><icon name="envelope" class="icon-envelope"></icon></h1>
@@ -50,7 +50,7 @@ export default {
   data () {
     return {
       recipient: this.$route.query.recipient,
-      mails: null
+      mails: []
     }
   },
   components: {
