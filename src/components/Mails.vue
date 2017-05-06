@@ -12,26 +12,26 @@
       </div>
     </div>
     <div class="list-group maillist-content-list-group" v-else>
-      <a class="list-group-item" href="{% url 'web:detail' mail.id %}" v-for="mail in mails">
+      <a class="list-group-item" href="{% url 'web:detail' mail._id %}" v-for="mail in mails">
         <div class="row">
           <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11 col-xl-11">
             <div class="row">
               <div class="col-lg-10">
-                {{ mail.sender }}
-                <span class="glyphicon glyphicon-lock" v-if="mail.is_secret"></span>
+                {{ mail.from[0] | formatAddress }}
+                <span class="glyphicon glyphicon-lock" v-if="mail.isSecret"></span>
               </div>
-              <div class="col-lg-2 text-right">{{ mail.recip_date | naturaltime }}</div>
+              <div class="col-lg-2 text-right">{{ moment(mail.date).fromNow() }}</div>
             </div>
             <div class="row h4">
               <div class="col-lg-12">
-                {{ mail.subject | truncatechars:50 }}
+                {{ mail.subject.substring(0, 50) }}
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12">
-                {% if not mail.is_secret and not mail.is_html %}
-                  {{ mail.contents | striptags | truncatechars:200 }}
-                {% endif %}
+              <div class="col-lg-12" v-if="mail.isSecret || mail.html">
+              </div>
+              <div class="col-lg-12" v-else>
+                {{ mail.text.substring(0, 200) }}
               </div>
             </div>
           </div>
@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 import 'vue-awesome/icons/envelope'
 import Icon from 'vue-awesome/components/Icon'
 
@@ -50,7 +52,47 @@ export default {
   data () {
     return {
       recipient: this.$route.query.recipient,
-      mails: []
+      mails: [{
+        _id: 1,
+        subject: 'This is subject',
+        from: [{
+          address: 'fromaddr@naver.com',
+          name: 'Holly'
+        }],
+        to: [{
+          address: 'test@sh8.email',
+          name: 'Tester'
+        }],
+        date: new Date(),
+        text: 'This is test text',
+        isSecret: false
+      }, {
+        _id: 2,
+        subject: 'This is subject2',
+        from: [{
+          address: 'fromaddr2@naver.com',
+          name: 'Holly2'
+        }],
+        to: [{
+          address: 'test2@sh8.email',
+          name: 'Tester2'
+        }],
+        date: new Date('2017-01-10'),
+        text: 'This is test text2',
+        isSecret: true
+      }]
+    }
+  },
+  filters: {
+    formatAddress: function (address) {
+      const email = address.address
+      const name = address.name
+      return `${name} <${email}>`
+    }
+  },
+  methods: {
+    moment: function (...args) {
+      return moment(...args)
     }
   },
   components: {
