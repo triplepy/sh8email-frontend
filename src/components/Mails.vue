@@ -1,18 +1,14 @@
 <template lang="html">
   <div class="mails container">
     <div class="row" v-if="!recipient">
-      <div class="nomail">
-        <div class="col-lg-12">
-          닉네임을 입력하여 체크인을 해주세요.
-        </div>
+      <div class="col-lg-12">
+        닉네임을 입력하여 체크인을 해주세요.
       </div>
     </div>
     <div class="row" v-else-if="!mails">
-      <div class="nomail">
-        <div class="col-lg-12">
-          <h3 class="text-center">({{ recipient }}@sh8.email)로 메일을 보내주세요</h3>
-          <h1 class="text-center"><icon name="envelope" class="icon-envelope"></icon></h1>
-        </div>
+      <div class="col-lg-12">
+        <h3 class="text-center">({{ recipient }}@sh8.email)로 메일을 보내주세요</h3>
+        <h1 class="text-center"><icon name="envelope" class="icon-envelope"></icon></h1>
       </div>
     </div>
     <div class="list-group maillist-content-list-group" v-else>
