@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="list-group maillist-content-list-group" v-else>
-      <a class="list-group-item" href="{% url 'web:detail' mail._id %}" v-for="mail in mails">
+      <router-link class="list-group-item" :to="{ name: 'Mail', params: { id: mail._id } }" v-for="mail in mails" :key="mail._id">
         <div class="row">
           <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11 col-xl-11">
             <div class="row">
@@ -37,7 +37,7 @@
           </div>
           <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 col-xl-1 text-right deco-right-arrow">&gt;</div>
         </div>
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
@@ -86,11 +86,7 @@ export default {
     }
   },
   filters: {
-    formatAddress: function (address) {
-      const email = address.address
-      const name = address.name
-      return `${name} <${email}>`
-    }
+    formatAddress
   },
   methods: {
     moment: function (...args) {

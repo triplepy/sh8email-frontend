@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Intro from '@/components/Intro'
 import Help from '@/components/Help'
 import Mails from '@/components/Mails'
+import Mail from '@/components/Mail'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/recipient/:recipient/mails',
       name: 'Mails',
       component: Mails
+    },
+    {
+      path: '/recipient/:recipient/mails/:id',
+      name: 'Mail',
+      component: Mail
     }
   ]
 })
