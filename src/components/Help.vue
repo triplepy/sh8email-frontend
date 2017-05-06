@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <router-link role="button" class="btn btn-primary btn-lg btn-block help--button" to="/">인트로 화면으로 이동하기</router-link>
+    <router-link role="button" class="btn btn-primary btn-lg btn-block help--button" :to="{name: 'Intro'}">인트로 화면으로 이동하기</router-link>
   </div>
 </template>
 

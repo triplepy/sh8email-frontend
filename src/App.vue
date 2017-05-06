@@ -10,7 +10,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <router-link class="navbar-brand" to="/"><img src="./assets/logo.png" alt="sh8.email"><span>sh8.email </span><span class="badge">βETA</span></router-link>
+          <router-link class="navbar-brand" :to="{name: 'Intro'}"><img src="./assets/logo.png" alt="sh8.email"><span>sh8.email </span><span class="badge">βETA</span></router-link>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

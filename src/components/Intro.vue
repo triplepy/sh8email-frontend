@@ -29,7 +29,7 @@
           <p class="lead">
             <div class="row justify-content-center">
               <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <router-link to="help" class="btn btn-lg btn-default mailcheck">이게 뭐고, 어떻게 쓰는거죠?</router-link>
+                <router-link :to="{name: 'Help'}" class="btn btn-lg btn-default mailcheck">이게 뭐고, 어떻게 쓰는거죠?</router-link>
               </div>
             </div>
           </p>
