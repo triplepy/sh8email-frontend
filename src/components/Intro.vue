@@ -7,7 +7,7 @@
           <p class="lead">
             <label class="intro-cover-subtitle" for="">세상에서 가장 조용한 이메일</label>
           <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="col-xl-8 col-xl-offset-2 col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
               <div class="input-group">
                 <div class="input-group input-group-lg">
                   <input v-model.trim="recipient" type="text" name="recipient" id="recipient" class="form-control" placeholder="닉네임"
@@ -21,14 +21,14 @@
           <p class="lead"><!-- 공백을 위함 --></p>
           <p class="lead">
             <div class="row">
-              <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+              <div class="col-xl-8 col-xl-offset-2 col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
                 <button class="btn btn-lg btn-primary mailcheck js-forms-submitbutton" v-on:click.prevent="showMails">메일 확인</button>
               </div>
             </div>
           </p>
           <p class="lead">
             <div class="row">
-              <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+              <div class="col-xl-8 col-xl-offset-2 col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
                 <router-link to="help" class="btn btn-lg btn-default mailcheck">이게 뭐고, 어떻게 쓰는거죠?</router-link>
               </div>
             </div>

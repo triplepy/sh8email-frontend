@@ -1,10 +1,10 @@
 <template>
   <div class="help container">
     <div class="row help--item">
-      <div class="col-md-8">
+      <div class="col-lg-8">
         <img src="../assets/no_signup_required.gif" alt="가입없이 바로 메일을 받아볼 수 있습니다." class="img-responsive">
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4">
         <h4>가입없이 바로 받자!</h4>
 
         <p>
@@ -21,10 +21,10 @@
       </div>
     </div>
     <div class="row help--item">
-      <div class="col-md-8 col-md-push-4">
+      <div class="col-lg-8 col-lg-push-4">
         <img src="../assets/secret_mail.gif" alt="쉿메일을 사용하면 남들에게 메일을 보여주지 않을 수 있습니다." class="img-responsive">
       </div>
-      <div class="col-md-4 col-md-pull-8">
+      <div class="col-lg-4 col-lg-pull-8">
         <h4>남 몰래 받고 싶을 땐!</h4>
 
         <p>
@@ -34,10 +34,10 @@
       </div>
     </div>
     <div class="row help--item">
-      <div class="col-md-8">
+      <div class="col-lg-8">
         <img src="../assets/auto_delete.gif" alt="메일을 읽은 뒤에는 불편하지 않게 똑똑한 방식으로 지워줍니다." class="img-responsive">
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4">
         <h4>세상에서 가장 조용한 이메일</h4>
 
         <p>
