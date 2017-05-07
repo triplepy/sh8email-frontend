@@ -44,6 +44,7 @@
 
 <script>
 import moment from 'moment'
+import axios from 'axios'
 
 import 'vue-awesome/icons/envelope'
 import Icon from 'vue-awesome/components/Icon'
@@ -54,36 +55,11 @@ export default {
   data () {
     return {
       recipient: this.$route.params.recipient,
-      mails: [{
-        _id: 1,
-        subject: 'This is subject',
-        from: [{
-          address: 'fromaddr@naver.com',
-          name: 'Holly'
-        }],
-        to: [{
-          address: 'test@sh8.email',
-          name: 'Tester'
-        }],
-        date: new Date(),
-        text: 'This is test text',
-        isSecret: false
-      }, {
-        _id: 2,
-        subject: 'This is subject2',
-        from: [{
-          address: 'fromaddr2@naver.com',
-          name: 'Holly2'
-        }],
-        to: [{
-          address: 'test2@sh8.email',
-          name: 'Tester2'
-        }],
-        date: new Date('2017-01-10'),
-        text: 'This is test text2',
-        isSecret: true
-      }]
+      mails: []
     }
+  },
+  created: function () {
+    this.fetchMails()
   },
   filters: {
     formatAddress
@@ -91,6 +67,17 @@ export default {
   methods: {
     moment: function (...args) {
       return moment(...args)
+    },
+    fetchMails: function () {
+      const that = this
+      const recipient = this.recipient
+      // TODO remove hardcode
+      axios.get(`http://localhost:3000/api/recipient/${recipient}/mails`).then(function (res) {
+        that.mails = res.data
+        console.log(that.mails)
+      }).catch(function (err) {
+        console.error(err)
+      })
     }
   },
   components: {
