@@ -73,8 +73,8 @@ export default {
       const recipient = this.recipient
       axios.get(`${process.env.API_URL}/recipient/${recipient}/mails`).then(function (res) {
         that.mails = res.data
-        console.log(that.mails)
       }).catch(function (err) {
+        // TODO change this with proper error handling
         console.error(err)
       })
     }
