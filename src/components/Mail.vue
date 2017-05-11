@@ -26,30 +26,41 @@
 </template>
 
 <script>
+import axios from 'axios'
 import formatAddress from '../utils/formatAddress'
 
 export default {
   data () {
     return {
-      mail: {
-        _id: 2,
-        subject: 'This is subject2',
-        from: [{
-          address: 'fromaddr2@naver.com',
-          name: 'Holly2'
-        }],
-        to: [{
-          address: 'test2@sh8.email',
-          name: 'Tester2'
-        }],
-        date: new Date('2017-01-10'),
-        text: 'This is test text2',
-        isSecret: true
-      }
+      mail: null,
+      secret: false,
+      recipient: this.$route.params.recipient,
+      id: this.$route.params.id
     }
+  },
+  created: function () {
+    this.fetchMail()
   },
   filters: {
     formatAddress
+  },
+  methods: {
+    fetchMail: function () {
+      const that = this
+      const recipient = this.recipient
+      const id = this.id
+      axios.get(`${process.env.API_URL}/recipient/${recipient}/mails/${id}`).then(function (res) {
+        that.mail = res.data
+      }).catch(function (err) {
+        if (err.response.status === 403) {
+          that.secret = true
+          return
+        }
+
+        // TODO change this with proper error handling
+        console.error(err)
+      })
+    }
   }
 }
 </script>
