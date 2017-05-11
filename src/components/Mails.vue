@@ -71,8 +71,7 @@ export default {
     fetchMails: function () {
       const that = this
       const recipient = this.recipient
-      // TODO remove hardcode
-      axios.get(`http://localhost:3000/api/recipient/${recipient}/mails`).then(function (res) {
+      axios.get(`${process.env.API_URL}/recipient/${recipient}/mails`).then(function (res) {
         that.mails = res.data
         console.log(that.mails)
       }).catch(function (err) {
