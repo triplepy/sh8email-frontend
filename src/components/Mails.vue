@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="list-group maillist-content-list-group" v-else>
-      <router-link class="list-group-item" :to="{ name: 'Mail', params: { id: mail._id } }" v-for="mail in mails" :key="mail._id">
+      <router-link class="list-group-item" :to="{ name: 'Mail', params: { id: mail.id } }" v-for="mail in mails" :key="mail.id">
         <div class="row">
           <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11 col-xl-11">
             <div class="row">
