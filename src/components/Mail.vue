@@ -1,4 +1,6 @@
 <template lang="html">
+  <!-- TODO Display secretCode input view if the mail is secret -->
+
   <div class="mail container">
     <div class="title">
       <div class="container">
